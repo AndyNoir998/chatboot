@@ -28,9 +28,44 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: Menú principal
+  steps:
+  - intent: greet
+  - action: utter_menu
+
 - story: Consulta de multas con placa
   steps:
+  - intent: /consultar_multas
+  - action: utter_consultar_multas
   - intent: consultar_multas
-  - intent: proporcionar_placa  
+  - intent: proporcionar_placa
   - action: action_capture_placa
+  - slot_was_set:
+    - placa: "placa"  
   - action: action_consultar_multas
+
+- story: Responder a preguntas frecuentes
+  steps:
+  - intent: /pregunta_frecuente
+  - action: utter_pregunta_frecuente
+  - intent: pregunta_frecuente
+  - action: utter_pregunta_frecuente_requisitos_licencia
+  - action: utter_pregunta_frecuente_plazos_registro_vehiculo
+  - action: utter_pregunta_frecuente_pagar_multas
+  - action: utter_pregunta_frecuente_duplicado_tarjeta_propiedad
+
+- story: Solicitar cita
+  steps:
+  - intent: solicitar_cita
+  - action: utter_solicitar_cita
+  - action: utter_menu
+
+- story: Despedida
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Mostrar menú
+  steps:
+  - intent: mostrar_menu
+  - action: utter_menu

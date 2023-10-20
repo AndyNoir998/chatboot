@@ -11,11 +11,35 @@ intents:
   - consultar_multas
   - renovar_licencia
   - proporcionar_placa
+  - pregunta_frecuente
+  - solicitar_cita
+  - mostrar_menu
 
 
 responses:
   utter_greet:
   - text: "¡Hola! Soy el asistente de atención al cliente del RUNT. ¿En qué puedo ayudarte?"
+
+  utter_menu:
+  - text: "¿En qué puedo ayudarte?"
+    buttons:
+    - title: "Consultar multas"
+      payload: "/consultar_multas"
+    - title: "Renovar licencia de conducir"
+      payload: "/renovar_licencia"
+    - title: "Pregunta frecuente"
+      payload: "/pregunta_frecuente"
+    - title: "Solicitar cita"
+      payload: "/solicitar_cita"
+
+  utter_consultar_multas:
+  - text: "Por favor, proporciona la placa de tu vehículo."
+
+  utter_renovar_licencia:
+  - text: "Los requisitos para renovar la licencia de conducir incluyen [lista de requisitos]. Puedes obtener más detalles en [sitio web]."
+
+  utter_pregunta_frecuente:
+  - text: "¿Qué te gustaría preguntar? Puedes preguntar acerca de requisitos para renovar la licencia, plazos para registrar un vehículo, pagar multas, etc."
 
   utter_ask_placa:
     - text: "Por favor, proporciona la placa de tu vehículo."
@@ -31,16 +55,44 @@ responses:
   - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Adiós, ¡espero haberte ayudado! Si tienes más preguntas en el futuro, no dudes en preguntar."
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
- 
+
+  utter_pregunta_frecuente_requisitos_licencia:
+  - text: "Los requisitos para renovar la licencia de conducir incluyen: Estar a paz y salvo de multas 
+          Estar inscrito en le Runt
+          Presentar cédula en original 
+          Pagar los derechos del trámite 
+          Contar con un certificado de aptitud de conducción emitido por una CEA
+          Certificado de examen físico  expedido por un CRC. 
+          Puedes obtener más detalles en https://www.runt.gov.co."
+
+  utter_pregunta_frecuente_plazos_registro_vehiculo:
+  - text: "El plazo para registrar un vehículo es Según la resolución 4775 de 2009 se debe realizar dentro de los 60 días hábiles siguientes a la adquisición del vehículo. Asegúrate de hacerlo a tiempo para evitar sanciones."
+
+  utter_pregunta_frecuente_pagar_multas:
+  - text: "Puedes pagar tus multas de tránsito en https://www.runt.gov.co. por PSE. Recuerda que es importante cumplir con tus obligaciones."
+
+  utter_pregunta_frecuente_duplicado_tarjeta_propiedad:
+  - text: "Si necesitas un duplicado de la tarjeta de propiedad, debes seguir los siguientes pasos: La persona natural o jurídica debe estar inscrita en el RUNT 
+          Presenter el documento original de identidad 
+          Formulario de solicitud del trámite debidamente diligenciando 
+          Soat vigente incorporado al RUNT
+          Paz y salvo de multas 
+          Pago de los derechos del trámite del duplicado. Asegúrate de tener todos los documentos requeridos."
+  
+  utter_solicitar_cita:
+  - text: "Puedes solicitar una cita para visitar el RUNT a través de nuestro sitio web [enlace de citas]. Simplemente selecciona la opción de programar cita e ingresa tus datos. ¿Hay algo más en lo que pueda ayudarte?"
+
 
 actions:
   - utter_greet
   - action_capture_placa
   - action_consultar_multas
+  - action_respuesta_pregunta_frecuente
+  - action_solicitar_cita
 
 slots:
   placa:
@@ -48,7 +100,7 @@ slots:
     mappings:
       - type: from_entity
         entity: placa
-
+  
 
 
 

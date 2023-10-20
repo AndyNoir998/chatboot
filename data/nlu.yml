@@ -3,32 +3,29 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hola
+    - ¡Buenas!
+    - Buenos días
+    - Buenas tardes
+    - Hola, ¿en qué puedo ayudarte?
+    - Greetings
+    - Saludos
+    - Hey
+    - Hello there
+    - ¡Hola! Soy un bot de asistencia
 
 - intent: goodbye
   examples: |
     - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
+    - buenos días
+    - hasta luego
+    - buenas noches
+    - adiós
+    - chao
+    - ten un buen día
+    - nos vemos
     - bye bye
-    - see you later
+    - hasta la vista
 
 - intent: affirm
   examples: |
@@ -101,3 +98,26 @@ nlu:
     - ¿Tengo multas en mi placa ABC123?
     - Consulta de multas para la placa XYZ456.
     - ¿Hay multas en mi vehículo?
+
+- intent: pregunta_frecuente
+  examples: |
+    - ¿Cuáles son los requisitos para renovar la licencia de conducir?
+    - ¿Cuáles son los plazos para registrar un vehículo?
+    - ¿Dónde puedo pagar mis multas de tránsito?
+    - ¿Cómo puedo solicitar un duplicado de la tarjeta de propiedad?
+
+- intent: solicitar_cita
+  examples: |
+    - Quiero programar una cita
+    - Necesito una cita en el RUNT
+    - ¿Cómo puedo solicitar una cita?
+    - Cita previa
+
+- intent: mostrar_menu
+  examples: |
+    - Mostrar menú
+    - Ver opciones
+    - Menú
+    - Mostrar opciones
+    - Quiero ver el menú
+    - ¿Cuáles son las opciones disponibles?
